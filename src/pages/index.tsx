@@ -2,6 +2,8 @@ import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import "../pages-style/index.scss";
 import logo from "../images/aysay-logo.png";
+import { Helmet } from "react-helmet";
+import "@fontsource/roboto";
 
 // markup
 class Index extends React.PureComponent<
@@ -32,12 +34,34 @@ class Index extends React.PureComponent<
   render() {
     return (
       <div className="index-page">
+        <Helmet
+          htmlAttributes={{ lang: "en" }}
+          title="AySay"
+          meta={[
+            {
+              name: `description`,
+              content: "AySay is a modern Danish/Turkish/Kurdish trio which combines Anatolian folk and Nordic electronica. A musical space where boundaries are broken down in a present and open way.",
+            },
+            {
+              property: `og:title`,
+              content: "AySay",
+            },
+            {
+              property: `og:description`,
+              content: "AySay is a modern Danish/Turkish/Kurdish trio which combines Anatolian folk and Nordic electronica. A musical space where boundaries are broken down in a present and open way.",
+            },
+            {
+              property: `og:type`,
+              content: `website`,
+            },
+          ]}
+        ></Helmet>
         <div className={`top-bar ${this.state.showTopBar ? "show" : ""}`}>
           <a href="https://www.facebook.com/aysaymusic">Facebook</a>
           <a href="https://www.instagram.com/aysaymusic/">Instagram</a>
           <a href="https://linktr.ee/AySay">Music</a>
           <div className="img-wrapper">
-            <img src={logo}></img>
+              AySay
           </div>
           <a href="https://linktr.ee/AySay">Contact</a>
           <a href="https://www.youtube.com/channel/UCvIg-1Lz6Z5Sq--DFIS7cSg">
@@ -60,7 +84,7 @@ class Index extends React.PureComponent<
           </div>
 
           <div className="img-wrapper">
-            <img src={logo}></img>
+            AySay
           </div>
 
           <div className="burger-nav" onClick={() => this.startNavTrans()}>
