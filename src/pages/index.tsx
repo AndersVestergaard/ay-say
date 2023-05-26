@@ -1,7 +1,6 @@
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import "../pages-style/index.scss";
-import logo from "../images/aysay-logo.png";
 import { Helmet } from "react-helmet";
 import "@fontsource/roboto";
 
@@ -40,7 +39,8 @@ class Index extends React.PureComponent<
           meta={[
             {
               name: `description`,
-              content: "AySay is a modern Danish/Turkish/Kurdish trio which combines Anatolian folk and Nordic electronica. A musical space where boundaries are broken down in a present and open way.",
+              content:
+                "AySay is a modern Danish/Turkish/Kurdish trio which combines Anatolian folk and Nordic electronica. A musical space where boundaries are broken down in a present and open way.",
             },
             {
               property: `og:title`,
@@ -48,7 +48,8 @@ class Index extends React.PureComponent<
             },
             {
               property: `og:description`,
-              content: "AySay is a modern Danish/Turkish/Kurdish trio which combines Anatolian folk and Nordic electronica. A musical space where boundaries are broken down in a present and open way.",
+              content:
+                "AySay is a modern Danish/Turkish/Kurdish trio which combines Anatolian folk and Nordic electronica. A musical space where boundaries are broken down in a present and open way.",
             },
             {
               property: `og:type`,
@@ -61,7 +62,15 @@ class Index extends React.PureComponent<
           <a href="https://www.instagram.com/aysaymusic/">Instagram</a>
           <a href="https://linktr.ee/AySay">Music</a>
           <div className="img-wrapper">
-              AySay
+            <StaticImage
+              style={{ height: "100%" }}
+              height={45}
+              width={200}
+              src="../images/aysay-logo.png"
+              alt="AySay logo"
+              placeholder="blurred"
+              quality={100}
+            ></StaticImage>
           </div>
           <a href="https://linktr.ee/AySay">Contact</a>
           <a href="https://www.youtube.com/channel/UCvIg-1Lz6Z5Sq--DFIS7cSg">
@@ -82,22 +91,27 @@ class Index extends React.PureComponent<
             </a>
             <a href="https://linktr.ee/AySay">Shows</a>
           </div>
-
           <div className="img-wrapper">
-            AySay
+            <StaticImage
+              style={{ height: "100%" }}
+              height={45}
+              width={200}
+              src="../images/aysay-logo.png"
+              alt="AySay logo"
+              placeholder="blurred"
+              quality={100}
+            ></StaticImage>
           </div>
-
           <div className="burger-nav" onClick={() => this.startNavTrans()}>
             <div className="middle"></div>
           </div>
         </div>
         <div className="container">
           <StaticImage
+            style={{ height: "100%" }}
             src="../images/aysay-press.jpg"
             alt="Press photo of AySay"
             placeholder="blurred"
-            transformOptions={{ cropFocus: "north", fit: "contain" }}
-            quality={100}
           ></StaticImage>
         </div>
       </div>
